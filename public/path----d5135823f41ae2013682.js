@@ -1,0 +1,2 @@
+webpackJsonp([60335399758886],{111:function(t,a){t.exports={data:{site:{siteMetadata:{title:"Cosmic JS Gatsby Starter",nav:[{slug:"/",name:"Home"},{slug:"/about",name:"About"},{slug:"/contact",name:"Contact"},{slug:"/not-found",name:"Not Found"}]}}},layoutContext:{}}}});
+//# sourceMappingURL=path----d5135823f41ae2013682.js.map

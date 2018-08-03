@@ -1,2 +1,2 @@
-webpackJsonp([0xf927f8900006],{324:function(t,o){t.exports={data:{cosmicjsPages:{title:"About",content:"This is the about page content."}},pathContext:{slug:"about"}}}});
+webpackJsonp([0xf927f8900006],{323:function(t,o){t.exports={data:{cosmicjsPages:{title:"About",content:"This is the about page content."}},pathContext:{slug:"about"}}}});
 //# sourceMappingURL=path---about-c6d27ab767e94cd3b862.js.map

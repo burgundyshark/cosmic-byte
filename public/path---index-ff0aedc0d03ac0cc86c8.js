@@ -1,2 +1,2 @@
-webpackJsonp([0x81b8806e4260],{326:function(e,t){e.exports={data:{cosmicjsPages:{title:"Home",content:"This is the home page content."}},pathContext:{slug:"home"}}}});
+webpackJsonp([0x81b8806e4260],{325:function(e,t){e.exports={data:{cosmicjsPages:{title:"Home",content:"This is the home page content."}},pathContext:{slug:"home"}}}});
 //# sourceMappingURL=path---index-ff0aedc0d03ac0cc86c8.js.map

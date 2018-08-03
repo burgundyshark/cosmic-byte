@@ -1,0 +1,41 @@
+.site-wrapper {
+  display: grid;
+  grid-template-rows: $header-height auto;
+  grid-template-columns: $sidebar-width auto;
+  grid-template-areas:
+    'header header'
+    'sidebar content'
+  ;
+}
+
+#header {
+  grid-area: header;
+}
+
+#sidebar {
+  grid-area: sidebar;
+}
+
+#content {
+  grid-area: content;
+}
+
+@media (max-width: $responsive-breakpoint) {
+  body {
+    grid-template-areas:
+      'header header'
+      'content content'
+    ;
+  }
+  
+  #sidebar {
+    grid-area: content;
+    position: relative;
+    left: 0;
+  }
+  
+  #sidebar.collapsed {
+    left: -100%;
+  }
+}
+

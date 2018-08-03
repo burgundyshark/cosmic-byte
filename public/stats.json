@@ -9,8 +9,8 @@
       "component---src-templates-page-js-f143c5056d69a0f08760.js.map"
     ],
     "component---src-layouts-index-js": [
-      "component---src-layouts-index-js-549b9c0d5f0fe9adb13c.js",
-      "component---src-layouts-index-js-549b9c0d5f0fe9adb13c.js.map"
+      "component---src-layouts-index-js-f94d52bc4e7b0e68984a.js",
+      "component---src-layouts-index-js-f94d52bc4e7b0e68984a.js.map"
     ],
     "path---index": [
       "path---index-ff0aedc0d03ac0cc86c8.js",
@@ -34,9 +34,7 @@
     ],
     "app": [
       "app-7fec6b5f10ff4575bce4.js",
-      "build-js-styles.css",
-      "app-7fec6b5f10ff4575bce4.js.map",
-      "build-js-styles.css.map"
+      "app-7fec6b5f10ff4575bce4.js.map"
     ],
     "path---404": [
       "path---404-a0e39f21c11f6a62c5ab.js",

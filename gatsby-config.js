@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: 'Cosmic JS Gatsby Starter',
+    title: 'Cosmic Byte - Intergalactic Tech News powered by Cosmic.js!',
     nav: [{ slug: '/', name: 'Home' },
       { slug: '/about', name: 'About' },
       { slug: '/contact', name: 'Contact' },
@@ -13,8 +13,8 @@ module.exports = {
     {
       resolve: `gatsby-source-cosmicjs`,
       options: {
-        bucketSlug: process.env.COSMIC_BUCKET || `node-starter`,
-        objectTypes: [`pages`],
+        bucketSlug: process.env.COSMIC_BUCKET || `cosmic-byte`,
+        objectTypes: [`posts`, `tags`, `pages`],
         // If you have enabled read_key to fetch data (optional).
         apiAccess: {
           read_key: ``,

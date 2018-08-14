@@ -20,11 +20,39 @@ class PageTemplate extends React.Component {
 
 export default PageTemplate
 
-export const pageQuery = graphql`
-  query PageBySlug($slug: String!) {
-    cosmicjsPages(slug: { eq: $slug }) {
-      title
-      content
+// export const pageQuery = graphql`
+//   query PageBySlug($slug: String!) {
+//     cosmicjsPages(slug: { eq: $slug }) {
+//       title
+//       content
+//     }
+//   }
+// `
+
+export const postsQuery = graphql`
+  query AllPosts {
+    allCosmicjsPosts {
+      edges {
+        node {
+          id
+          title
+          slug
+          type_slug
+          status
+          published_at
+          content
+          metafields {
+            object_type
+            value
+            key
+            title
+            type
+            required
+            url
+            imgix_url
+          }
+        }
+      }
     }
   }
 `

@@ -6,25 +6,56 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
 
   return new Promise((resolve, reject) => {
     const pageTemplate = path.resolve('./src/templates/page.js')
+    const postTemplate = path.resolve('./src/templates/post.js')
+    const tagPageTemplate = path.resolve('./src/templates/tag-page.js')
     resolve(
       graphql(
         `
           {
             site{
               siteMetadata{
+                title
                 nav{
                   slug
                   name
                 }
               }
             }
-            allCosmicjsPages{
-              edges{
-                node{
-                  slug
+
+            allCosmicjsTags {
+              edges {
+                node {
+                  id
+                  title
+                  cosmicjsId
                 }
               }
             }
+
+            allCosmicjsPosts {
+              edges {
+                node {
+                  id
+                  title
+                  slug
+                  type_slug
+                  status
+                  published_at
+                  content
+                  metafields {
+                    object_type
+                    value
+                    key
+                    title
+                    type
+                    required
+                    url
+                    imgix_url
+                  }
+                }
+              }
+            }
+            
           }
         `
       ).then(result => {
@@ -34,7 +65,48 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
         }
 
         const navs = result.data.site.siteMetadata.nav;
-        const pages = result.data.allCosmicjsPages.edges;
+        const pages = []
+        const posts = result.data.allCosmicjsPosts.edges
+          .map(p => p.node)
+          .filter(post => post.status === "published");
+        const tags = result.data.allCosmicjsTags.edges
+          .map(t => t.node)
+
+        posts.map(post => {
+          createPage({
+            path: `/posts/${post.slug}`,
+            component: postTemplate,
+            //layout: 'posts',
+            context: {
+              post,
+              slug: `posts/${post.slug}`
+            }
+          })
+        })
+
+        tags.map(tag => {
+          const tagId = `${tag.cosmicjsId}`
+          createPage({
+            path: `/${tag.id}`,
+            component: tagPageTemplate,
+            //layout: 'tag-page',
+            context: {
+              tag,
+              posts: posts.filter(post => {
+                let tagMatch = false
+                post.metafields.map(mf => {
+                  if(
+                    mf.objectType === "tags" &&
+                    mf.value === tagId
+                  ) tagMatch = true
+                })
+                return tagMatch
+              }),
+              slug: `/${tag.id}`
+            }
+          })
+        })
+
 
         _.each(navs, (page, index) => {
           const $slug = (page.slug === '/') ? 'home' : page.slug.slice(1);

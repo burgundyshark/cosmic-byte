@@ -9,6 +9,7 @@
     "gatsby-plugin-react-helmet": "^2.0.10",
     "gatsby-plugin-sass": "^1.0.26",
     "gatsby-source-cosmicjs": "0.0.2",
+    "javascript-time-ago": "^1.0.31",
     "lodash": "^4.17.10",
     "react-helmet": "^5.2.0"
   },
@@ -16,7 +17,7 @@
   "scripts": {
     "start": "gatsby build; gatsby serve --port $PORT",
     "build": "gatsby build",
-    "develop": "gatsby develop --port $PORT",
+    "dev": "gatsby develop --port 1337",
     "format": "prettier --write 'src/**/*.js'",
     "import": "node ./scripts/import.js",
     "test": "echo \"Error: no test specified\" && exit 1"

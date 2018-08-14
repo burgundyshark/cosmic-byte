@@ -76,7 +76,6 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
           createPage({
             path: `/posts/${post.slug}`,
             component: postTemplate,
-            //layout: 'posts',
             context: {
               post,
               slug: `posts/${post.slug}`
@@ -89,7 +88,6 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
           createPage({
             path: `/${tag.id}`,
             component: tagPageTemplate,
-            //layout: 'tag-page',
             context: {
               tag,
               posts: posts.filter(post => {
